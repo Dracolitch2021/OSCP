@@ -1,1 +1,23 @@
+## Basic Scan
+nmap <targetip>
 
+##Everything scan... takes forever
+nmap -O -sT -sV --version-intensity 8 -p- --script "not *brute*" -oA ./Desktop/nmap <targetip>
+
+##Common Scan
+nmap -sC -sV -sS --top-ports 300 -O -oA ./Desktop/nmap <targetip>
+
+##Low hang fruit ports
+25 (TCP)= SMTP
+53 (TCP/UDP)= DNS zone transfer
+135 (TCP/UDP)= Microsoft RPC endpoint map
+137 (UDP)= Netbios name services (NBNS)
+139 (TCP)= Netbios session service (SMB)
+161 (UDP)= SNMP
+162 (TCP/UDP)= SNMP Trap
+389 (TCP/UDP)= LDAP
+445 (TCP/UDP)= SMB (Direct Host)
+500 (UDP)= ISAKMP/IKE
+3268 (TCP/UDP)= Global Catalog Service
+5060 (TCP/UDP)= SIP
+5061 (TCP/UDP)= SIP
