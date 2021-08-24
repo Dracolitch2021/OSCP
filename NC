@@ -9,3 +9,7 @@ nc [options] [TargetIPaddr] [port]
 -w# wait a # of sec for connection to happen before timeout
 -v verbose
 -vv very verbose
+
+
+**** Simple Banner Grab ****
+nc -vv 1.1.1.1 443 
