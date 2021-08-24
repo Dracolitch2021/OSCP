@@ -1,0 +1,24 @@
+Common ports to keep an eye out for (Low Hang)
+Port        Proto         Service
+21          TCP           FTP (command)
+22          TCP           SSH
+23          TCP           Telnet
+25          TCP           SMTP  
+53          TCP/UDP       DNS
+80          TCP           HTTP
+88          TCP           Kerberos
+110         TCP           POP3
+111         TCP/UDP       *nix portmapper
+135         TCP           RPC Binder (Microsoft)
+137         UDP           NetBIOS Name service (NBNS)
+139         TCP           SMBv1 (Netbios)
+143         TCP           IMAP4
+161         TCP/UDP       SNMP
+162         TCP/UDP       SNMP Trap messages
+389         TCP           LDAP
+443         TCP           HTTPS
+445         TCP           SMB with Auth (Microsoft-ds)
+500         UDP           ISAKMP / IKE
+3389        TCP           RDP
+5060        TCP/UDP       SIP
+5061        TCP/UDP       SIP
