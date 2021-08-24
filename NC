@@ -1,0 +1,11 @@
+nc [options] [TargetIPaddr] [port]
+-l listen mode / client mode
+-L listen harder (windows only) (start listener again after a disconnect)
+-u UDP mode
+-p local port (port to listen on)
+-e (not alailable in all versions) execute this program upon successful connection
+-n turn off name services (DNS)
+-z zero mode, dont transfer data. (disable payload packet)
+-w# wait a # of sec for connection to happen before timeout
+-v verbose
+-vv very verbose
