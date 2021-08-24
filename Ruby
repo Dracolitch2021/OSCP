@@ -1,0 +1,83 @@
+Ruby Basics:
+
+#########Math Functions Ruby
+Add = +
+Subtract = -
+Multiply = *
+Divide = /
+Equal (assignment) = =
+Equal TO = ==
+Less Than = <
+Greater Than = >
+Logical NOT or Not Equal To = !
+Logical AND = &&
+Logical OR = ||
+Square Root = sqrt
+Exponent = exp
+Absolute Value = abs
+Basic sin = sin
+Cosin = cos
+Tangent = tan
+Logarithm = log
+Truncate/Round = round
+Floor = floor
+Ceiling = ceil
+Power = **
+
+###########Variable types
+Boolean = True or False
+Float = a number with a decimal point
+Integer = a whole number
+Null = No intrensic value
+String = Ordered sequence of characters
+
+###########Assigning Variables
+Boolean False (anything not nil or false when used as a boolean is considered true)
+X = nil
+All other vaiables 
+X = 4
+  To print the value of a var to python use the print command
+  print x.value
+  to print the value of a var to ruby use the stdout command
+  stdout.print(x.value)
+
+Variable lists are used to group numbers, letters, or even constructs such as arrays, hashes, or other lists. Lists are created using brackets []
+listA = [1,2,3,4,5,6,7,8,9,10]
+
+You can concatenate 2 or more lists together with the use of the + symbol
+listA = [1,2,3]
+listB = [4,5,6]
+listC = listA+listB
+puts "#{listC}"
+
+Strings (a single quote will see everything verbatim, a double quote will use substitution 
+'#{listC}' = #{listC}
+"#{listC}" = [1,2,3,4,5,6]
+
+stringA = 'fish'
+stringB = 'and'
+stringC = 'chips'
+stringD = stringa+stringb+stringc
+puts stringD
+
+Running Ruby Scripts
+
+
+******************Start Ruby simple script**********
+#!/usr/bin/env ruby
+
+print "What is your name?"
+
+name = gets.chomp
+
+puts "Hello #{name}!"
+
+******************End Ruby simple script***********
+
+chmod the script to +x
+kali@kali:~$ ruby simple.rb
+
+***************** def *******************
+defining a function
+
+to be continued...
